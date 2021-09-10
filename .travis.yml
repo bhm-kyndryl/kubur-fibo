@@ -13,7 +13,7 @@ before_install:
   - gcloud auth activate-service-account --key-file deployer-service-account.json
   - gcloud config set project white-vortex-325612
   - gcloud config set compute/zone europe-west1-d
-  - gcloud container clusters get-credentials multi-cluster
+  - gcloud container clusters get-credentials kuber-fibo-k8s-cl
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t bhmkyndryl/kuber-fibo-buildtest -f ./client/Dockerfile.dev ./client
 
